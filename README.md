@@ -31,3 +31,18 @@ git log
 git config --list 
 git remote -v
 ```
+
+# 终端命令
+
+```
+Desktop   桌面
+ls              展开目录
+cd ..          退一步
+cd             进一步       
+mkdir      创建n个文件夹
+touch      创建n个文件
+rm           删除n个文件
+rm -rf      删除 n个文件夹、文件
+pwd        查看当前文件绝对路径
+ifconfig   查看ip
+```
