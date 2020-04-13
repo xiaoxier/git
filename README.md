@@ -2,7 +2,7 @@
 
 
 **「常用命令」**
-
+```
 git init
 git config --global user.name "xiaoxier"
 git config --global user.email "25@qq.com"
@@ -30,3 +30,4 @@ git diff
 git log
 git config --list 
 git remote -v
+```
