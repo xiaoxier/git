@@ -1,6 +1,5 @@
 # git
 
-
 **「常用命令」**
 ```
 git init
@@ -33,7 +32,9 @@ git remote -v
 
 ```
 
-## 终端命令
+# linix
+
+**「常用命令」**
 
 ```
 
@@ -46,6 +47,5 @@ touch      创建n个文件
 rm           删除n个文件
 rm -rf      删除 n个文件夹、文件
 pwd        查看当前文件绝对路径
-ifconfig   查看ip
 
 ```
