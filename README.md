@@ -32,7 +32,7 @@ git remote -v
 
 ```
 
-# linix
+# shell
 
 **「常用命令」**
 
