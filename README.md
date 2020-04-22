@@ -58,6 +58,8 @@ pwd        查看当前文件绝对路径
 
 
 - Devtools模式下 (f12)  ctrl+shift+p 调出快捷栏
+
+```
 		?   查看所有命令
 		...  打开文件
 		:    前往文件
@@ -67,11 +69,14 @@ pwd        查看当前文件绝对路径
 		> performance monitor  显示性能监视器及相关信息，例如CPU，JS堆大小和DOM节点。
 		> FPS选择第一项  实时监控性能
 		> screen 选择 Capture node screenhot  截图单个元素
-
+```
 - 选择特定DOM元素 右击选择Break on
+
+```
 		Break on->Subtree modifications: 子节点删除或添加时
 		Break on->Attributes modifications: 属性修改时
 		Break on->Node Removal: 节点删除时
+```
 
 - Blackbox Script 剔除多余脚本断点 source中选择文件 打开文件 右击 选择Blackbox Script
 
@@ -79,8 +84,10 @@ pwd        查看当前文件绝对路径
 - Sources -> Event Listener Breakpoints
 
 - Sources >; Overrides >; Enable local Overrides，选择本地文件夹  
-		将本地文件夹映射到网络 工作区修改直接改动本地文件
 
+```
+		将本地文件夹映射到网络 工作区修改直接改动本地文件
+```
 
 - Chrome自身实现的jquery加强版  控制台内置指令
 
