@@ -29,6 +29,7 @@ git diff
 git log
 git config --list 
 git remote -v
+git checkout <文件名> //更新文件
 
 ```
 
