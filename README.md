@@ -21,6 +21,8 @@ git push origin --delete <remote 分支名> //删除远程分支
 git checkout -b <分支名> //新建分支并切换到新建分支
 git checkout -b <分支名> origin/<remote分支名> //在本地创建和远程分支对应的分支 （基于远程分支创建新本地分支）
 git merge <分支名>
+ git pull origin 指定分支
+ git push //这两步操作相当于merge指定分支到本地操作
 git reset <分支名>
 git status
 git branch
