@@ -24,14 +24,22 @@ git merge <分支名>
  git pull origin 指定分支
  git push //这两步操作相当于merge指定分支到本地操作
 git reset <分支名>
+git reset --hard HEAD^ //回退到上版本
+git reset --hard commitId //回退到指定commId
 git status
 git branch
 git branch -d <分支名> //删除本地分支
 git diff
-git log
+git log //查看commit历史
+git log --pretty=oneline //仅查看commit id
 git config --list 
 git remote -v
 git checkout <文件名> //更新文件
+git config user.name //查看作者
+git config user.email
+git config --global user.name "hanpanpan"//设置作者
+git config --global user.email "2380272325@qq.com"
+
 
 ```
 
