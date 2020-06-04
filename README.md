@@ -121,3 +121,10 @@ pwd        查看当前文件绝对路径
 	console.dir()
 
 ```
+
+# sublime快捷键
+
+```
+ shift+ctrl+1~6 调整透明度
+ 
+```
