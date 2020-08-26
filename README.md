@@ -11,9 +11,11 @@ git pull   //将与本地当前分支同名的远程分支 拉取到 本地当�
 git pull origin <远程分支名> //将远程指定分支拉取到本地当前分支上
 git pull origin <远程分支名> :<本地分支名> //将远程指定分支 拉取到 本地指定分支上
 git commit -m'tag 日志' 
+git tag <tagname> // 打tag
 git push 
 git push --set-upstream origin <本地分支名> //将本地分支与远程同名分支相关联
 git push origin <指定的分支名>  //将本地代码推送到远程指定分支
+git push origin <tagname> //远端推送分支
 git push --force 
 git push -u orgin/<remote 分支名> //远程有分支 本地已建立并创建分支
 git push origin local_branch:remote_branch 远程无分支 本地已建立并切换分支
@@ -39,6 +41,18 @@ git config user.name //查看作者
 git config user.email
 git config --global user.name "hanpanpan"//设置作者
 git config --global user.email "2380272325@qq.com"
+
+$ git tag v1.0   //创建tag
+$ git tag v1.0 <commitId> //指定commitId打tag
+$ git tag -a <tagname> -m "blablabla..." //增加tagname 注释blablab
+$ git tag //查看所有标签
+$ git tag -l   ' v1.0.*' //查看某版本tag
+$ git show v1.0 //查看tag信息
+$ git checkout [tagName/branchName] //切换到某tag
+$ git tag -d <tagname>  //删除本地tag
+$ git push origin v1.0.0 //推送v1.0.0到远程
+$ git push origin --tags //推送所有tag到远程 （tags[所有]）
+$ git push origin --delete <tagname> //远程删除
 
 
 ```
