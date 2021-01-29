@@ -3,8 +3,8 @@
 **「常用命令」**
 ```
 git init
-git config --global user.name "xiaoxier"
-git config --global user.email "25@qq.com"
+git config --global user.name "xiaoxier" //设置全局name  --global去掉  仅设置当前项目下
+git config --global user.email "25@qq.com"//设置全局email 
 git clone -b <分支名> xx.git  //从指定分支clone
 git add .
 git pull   //将与本地当前分支同名的远程分支 拉取到 本地当前分支上(需先关联远程分支)
@@ -28,7 +28,12 @@ git merge <分支名>
 git reset <分支名>
 git reset --hard HEAD^ //回退到上版本
 git reset --hard commitId //回退到指定commId
+git stash //暂存
+git stash list //显示进度列表
+git stash apply stash@{1} //应用暂存列表的进度key
+git stash clear //清空stash列表
 git status
+git revert //回退远程代码库
 git branch
 git branch -d <分支名> //删除本地分支
 git diff
