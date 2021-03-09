@@ -144,8 +144,8 @@ pwd        查看当前文件绝对路径
 # sublime快捷键
 
 ```
- shift+ctrl+1~6 调整透明度
- cmd + p                      →  检索目标文件
+shift+ctrl+1~6 调整透明度
+cmd + p                      →  检索目标文件
 cmd + shift +t            →   重新打开关闭的标签页
 cmd + shift +p                快速查找，更改设置
 cmd + shift +f                 搜索整个ST项目下目录
