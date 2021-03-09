@@ -145,5 +145,28 @@ pwd        查看当前文件绝对路径
 
 ```
  shift+ctrl+1~6 调整透明度
+ cmd + p                      →  检索目标文件
+cmd + shift +t            →   重新打开关闭的标签页
+cmd + shift +p                快速查找，更改设置
+cmd + shift +f                 搜索整个ST项目下目录
+cmd +  方向键                 实现文字行间跳转
+cmd + ctrl +Up/Down    上下移动当前行
+shift + 方向                      移动并选中
+
+
+cmd + g                           跳转到
+
+ctrl + m                           跳转到对应括号
+ctrl + shift +m                 选中括号内容
+cmd + m                         最小化到dock栏
+ctrl + /                             注释切换
+ctrl+shift+k                         删除整行
+ctrl + kk                              从光标处删除至行尾
+Shift+F11                    免打扰模式
+Command + Ctrl + G    选中相同文本
+cmd + d          选中下一次相同文本
+cmd+d /cmd+l       选中一个/一行
+cmd + t   列出所有文件   cmd+shift+] 下一文件
+Command + R    列出选择器
  
 ```
