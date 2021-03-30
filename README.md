@@ -42,6 +42,7 @@ git log --pretty=oneline //仅查看commit id
 git config --list 
 git remote -v
 git checkout <文件名> //更新文件
+git checkout <branch>  path //当前分支某path目录/文件替换为其他分支的文件
 git config user.name //查看作者
 git config user.email
 git config --global user.name "hanpanpan"//设置作者
