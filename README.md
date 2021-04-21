@@ -58,8 +58,8 @@ $ git checkout [tagName/branchName] //切换到某tag
 $ git tag -d <tagname>  //删除本地tag
 $ git push origin v1.0.0 //推送v1.0.0到远程
 $ git push origin --tags //推送所有tag到远程 （tags[所有]）
-$ git push origin --delete <tagname> //远程删除
-
+$ git push origin --delete <tagname>  //远程删除
+$ git push origin :refs/tags/<tagname>//删除线上tag
 
 ```
 
