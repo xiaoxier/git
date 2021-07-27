@@ -27,13 +27,15 @@ git merge <分支名>
  git push //这两步操作相当于merge指定分支到本地操作
 git reset <分支名>
 git reset --hard HEAD^ //回退到上版本
-git reset --hard commitId //回退到指定commId
+git reset --hard commitId //回退到指定commId 回退前提交记录不可见
+git revert //回退远程代码库 自动新建新的commit信息 覆盖上次修改 回滚前历史提交记录可见 
 git stash //暂存
-git stash list //显示进度列表
+git stash save "message" //添加存储备注
+git stash pop //应用最近一次暂存的修改，并删除暂存的记录
 git stash apply stash@{1} //应用暂存列表的进度key
+git stash list //查看存储
 git stash clear //清空stash列表
 git status
-git revert //回退远程代码库
 git branch
 git branch -d <分支名> //删除本地分支
 git diff
@@ -47,6 +49,8 @@ git config user.name //查看作者
 git config user.email
 git config --global user.name "hanpanpan"//设置作者
 git config --global user.email "2380272325@qq.com"
+git config --global alias.co.checkout //checkout简写co
+
 
 $ git tag v1.0   //创建tag
 $ git tag v1.0 <commitId> //指定commitId打tag
@@ -60,6 +64,28 @@ $ git push origin v1.0.0 //推送v1.0.0到远程
 $ git push origin --tags //推送所有tag到远程 （tags[所有]）
 $ git push origin --delete <tagname>  //远程删除
 $ git push origin :refs/tags/<tagname>//删除线上tag
+
+```
+
+
+**.gitconfig 配置**
+```
+[alias]
+st = status -sb
+co = checkout
+br = branch
+mg = merge
+ci = commit
+ds = diff --staged
+dt = difftool
+mt = mergetool
+last = log -1 HEAD
+latest = for-each-ref --sort=-committerdate --format=\"%(committername)@%(refname:short) [%(committerdate:short)] %(contents)\"
+ls = log --pretty=format:\"%C(yellow)%h %C(blue)%ad %C(red)%d %C(reset)%s %C(green)[%cn]\" --decorate --date=short
+hist = log --pretty=format:\"%C(yellow)%h %C(red)%d %C(reset)%s %C(green)[%an] %C(blue)%ad\" --topo-order --graph --date=short
+type = cat-file -t
+dump = cat-file -p
+lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 ```
 
