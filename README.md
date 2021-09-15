@@ -7,9 +7,10 @@ git config --global user.name "xiaoxier" //设置全局name  --global去掉  仅
 git config --global user.email "25@qq.com"//设置全局email 
 git clone -b <分支名> xx.git  //从指定分支clone
 git add .
-git pull   //将与本地当前分支同名的远程分支 拉取到 本地当前分支上(需先关联远程分支)
+git pull   //将与本地当前分支同名的远程分支 拉取并merge到本地当前分支上(需先关联远程分支)
 git pull origin <远程分支名> //将远程指定分支拉取到本地当前分支上
 git pull origin <远程分支名> :<本地分支名> //将远程指定分支 拉取到 本地指定分支上
+git fetch //从远程获取最新版本到本地 不会自动merge
 git commit -m'tag 日志' 
 git tag <tagname> // 打tag
 git push 
