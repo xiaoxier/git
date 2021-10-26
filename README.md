@@ -43,6 +43,10 @@ git status
 git branch
 git branch -D <分支名> //删除本地分支
 git diff
+git diff <branch1> <branch2> //分支间比较
+git diff SHA1 SHA2 //比较两个历史版本之间的差异
+ git diff HEAD^ HEAD //比较上次与上上次差异
+
 git log //查看commit历史
 git log --pretty=oneline //仅查看commit id
 git config --list 
