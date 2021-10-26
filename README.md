@@ -36,6 +36,9 @@ git stash pop //应用最近一次暂存的修改，并删除暂存的记录
 git stash apply stash@{1} //应用暂存列表的进度key
 git stash list //查看存储
 git stash clear //清空stash列表
+git rebase <branch> //合并多个commit为一个完整的commit
+git rebase --continue //rebase过程中修复冲突后执行此命令 修复完冲突只需要git add 直接运行此命令提交
+git rebase --abort //终止rebase操作 回到rebase前代码
 git status
 git branch
 git branch -D <分支名> //删除本地分支
