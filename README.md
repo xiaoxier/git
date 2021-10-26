@@ -38,7 +38,7 @@ git stash list //查看存储
 git stash clear //清空stash列表
 git status
 git branch
-git branch -d <分支名> //删除本地分支
+git branch -D <分支名> //删除本地分支
 git diff
 git log //查看commit历史
 git log --pretty=oneline //仅查看commit id
