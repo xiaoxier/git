@@ -3,7 +3,7 @@
 **「常用命令」**
 ```
 git init
-git config --global user.name "xiaoxier" //设置全局name  --global去掉  仅设置当前项目下
+git config --global user.name "xiaoxier" //设置全局name  --global去掉 仅设置当前项目下
 git config --global user.email "25@qq.com"//设置全局email 
 git clone -b <分支名> xx.git  //从指定分支clone
 git add .
