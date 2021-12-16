@@ -29,7 +29,8 @@ git merge <分支名>
 git reset <分支名>
 git reset --hard HEAD^ //回退到上版本
 git reset --hard commitId //回退到指定commId 回退前提交记录不可见
-git revert //回退远程代码库 自动新建新的commit信息 覆盖上次修改 回滚前历史提交记录可见 
+git revert -n commitId //去掉指定commitId提交 生成新版本附带新commitId信息 保留历史记录 同一文件撤退指定提交需手动删除提交内容
+git revert -n commitIdA..commitIdB //反坐A-B之间所有的commitId
 git stash //暂存
 git stash save "message" //添加存储备注
 git stash pop //应用最近一次暂存的修改，并删除暂存的记录
