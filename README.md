@@ -16,7 +16,7 @@ git tag <tagname> // 打tag
 git push 
 git push --set-upstream origin <本地分支名> //将本地分支与远程同名分支相关联
 git push origin <指定的分支名>  //将本地代码推送到远程指定分支
-git push origin <tagname> //远端推送分支
+git push origin <tagname> //远端推送分支 
 git push --force 
 git push -u orgin/<remote 分支名> //远程有分支 本地已建立并创建分支
 git push origin local_branch:remote_branch 远程无分支 本地已建立并切换分支
