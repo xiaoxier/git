@@ -27,11 +27,12 @@ git merge <分支名>
  git pull origin 指定分支
  git push //这两步操作相当于merge指定分支到本地操作
 git reset <分支名>
-git reset --hard HEAD^ //回退到上版本
-git reset --hard commitId //回退到指定commId 回退前提交记录不可见
+git reset --hard HEAD^ //回退到上版本 （回退操作去掉暂存区记录 hard会连同本地工作区去掉记录 vscode工具会自动携带回退前不要的内容上去，内容会含在commit记录里面）
+git reset --hard commitId //回退到指定commId 回退前提交记录不可见 
 git revert -n commitId //去掉指定commitId提交 生成新版本附带新commitId信息 保留历史记录 同一文件撤退指定提交需手动删除提交内容
 git revert -n commitIdA..commitIdB //去掉A-B之间所有的commitId 按照提交先后 先A后B
-git stash //暂存
+git restore <文件名> //删除未存入暂存区的本地内容 扔掉
+git stash //暂存  删除未存入暂存区的本地内容 并且存入缓存
 git stash save "message" //添加存储备注
 git stash pop //应用最近一次暂存的修改，并删除暂存的记录
 git stash apply stash@{1} //应用暂存列表的进度key
@@ -40,7 +41,8 @@ git stash clear //清空stash列表
 git rebase <branch> //合并多个commit为一个完整的commit
 git rebase --continue //rebase过程中修复冲突后执行此命令 修复完冲突只需要git add 直接运行此命令提交
 git rebase --abort //终止rebase操作 回到rebase前代码
-git status
+git status //仅记录commit日志
+git reflog //记录所有操作 运行分支及commit日志
 git branch
 git branch -D <分支名> //删除本地分支
 git diff
