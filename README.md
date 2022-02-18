@@ -12,7 +12,8 @@ git pull origin <远程分支名> //将远程指定分支拉取到本地当前�
 git pull origin <远程分支名> :<本地分支名> //将远程指定分支 拉取到 本地指定分支上
 git pull = git fetch + git merge
 git fetch //从远程获取最新版本到本地 不会自动merge
-git commit -m'tag 日志' 
+git commit //vim编辑正文 自动生成标题 esc退出编辑 :wq保存
+git commit -m'tag 日志' //不推荐使用 日志只包含标题
 git tag <tagname> // 打tag
 git push 
 git push --set-upstream origin <本地分支名> //将本地分支与远程同名分支相关联
@@ -27,14 +28,18 @@ git checkout -b <分支名> origin/<remote分支名> //在本地创建和远程�
 git merge <分支名>
  git pull origin 指定分支
  git push //这两步操作相当于merge指定分支到本地操作
+git merge --no-ff //合并时禁用fast forward模式 该模式合并时不保留原分支信息 直接并入merge后分支
 git reset <分支名>
+git reset --hard HEAD //回退到当前最新提交
 git reset --hard HEAD^ //回退到上版本 （回退操作去掉暂存区记录 hard会连同本地工作区去掉记录 vscode工具会自动携带回退前不要的内容上去，内容会含在commit记录里面）
-git reset --hard commitId //回退到指定commId 回退前提交记录不可见 
+git reset --hard HEAD-n //回退到上n次提交
+git reset --hard commitId //回退到指定commId 回退前提交记录不可见 可以重返未来版本 reflog有记录
 git revert -n commitId //去掉指定commitId提交 生成新版本附带新commitId信息 保留历史记录 同一文件撤退指定提交需手动删除提交内容
 git revert -n commitIdA..commitIdB //去掉A-B之间所有的commitId 按照提交先后 先A后B
 git restore <文件名> //删除未存入暂存区的本地内容 扔掉
 git stash //暂存  删除未存入暂存区的本地内容 并且存入缓存
 git stash save "message" //添加存储备注
+git stash drop //删除暂存记录
 git stash pop //应用最近一次暂存的修改，并删除暂存的记录
 git stash apply stash@{1} //应用暂存列表的进度key
 git stash list //查看存储
@@ -43,10 +48,14 @@ git rebase <branch> //合并多个commit为一个完整的commit
 git rebase --continue //rebase过程中修复冲突后执行此命令 修复完冲突只需要git add 直接运行此命令提交
 git rebase --abort //终止rebase操作 回到rebase前代码
 git cherry-pick feature //将feature分支的最近一次提交，转移到当前分支
+git cherry-pick <HashA> <HashB> //支持一次转移多个提交
+git cherry-pick A..B //A早于B才会成功 转移A到B 不包含A的所有提交
+git cherry-pick A^..B //包含A的 转移A到B的所有提交
 git status //仅记录commit日志
-git reflog //记录所有操作 运行分支及commit日志
-git branch
+git reflog //记录所有操作（历史提交及被回退的提交） 运行分支及commit日志
+git branch -a //本地分支为本地分支名 远程分支为<远程仓库名>/分支名
 git branch -D <分支名> //删除本地分支
+git push origin -d <分支名> //删除远程分支
 git diff
 git diff <branch1> <branch2> //分支间比较
 git diff SHA1 SHA2 //比较两个历史版本之间的差异
@@ -55,7 +64,8 @@ git diff HEAD^ HEAD //比较上次与上上次差异
 git log //查看commit历史
 git log --pretty=oneline //仅查看commit id
 git config --list 
-git remote -v
+git remote -v //查看详细
+git remote //查看不详细
 git checkout <文件名> //更新文件
 git checkout <branch>  path //当前分支某path目录/文件替换为其他分支的文件 切换到本地没有的分支时 先Git pull更新 本地会自动创建远程分支并关联
 git config user.name //查看作者
@@ -65,7 +75,7 @@ git config --global user.email "2380272325@qq.com"
 git config --global alias.co.checkout //checkout简写co
 
 
-$ git tag v1.0   //创建tag
+$ git tag v1.0 //创建tag
 $ git tag v1.0 <commitId> //指定commitId打tag
 $ git tag -a <tagname> -m "blablabla..." //增加tagname 注释blablab
 $ git tag //查看所有标签
@@ -73,10 +83,11 @@ $ git tag -l   ' v1.0.*' //查看某版本tag
 $ git show v1.0 //查看tag信息
 $ git checkout [tagName/branchName] //切换到某tag
 $ git tag -d <tagname>  //删除本地tag
-$ git push origin v1.0.0 //推送v1.0.0到远程
+$ git push origin v1.0.0 //推送指定tagv1.0.0到远程
 $ git push origin --tags //推送所有tag到远程 （tags[所有]）
-$ git push origin --delete <tagname>  //远程删除
+$ git push origin --delete <tagname>  //删除远程删标签
 $ git push origin :refs/tags/<tagname>//删除线上tag
+$ git pull origin --tags //更新到本地
 
 ```
 
