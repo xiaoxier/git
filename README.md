@@ -10,6 +10,7 @@ git add .
 git pull   //将与本地当前分支同名的远程分支 拉取并merge到本地当前分支上(需先关联远程分支)
 git pull origin <远程分支名> //将远程指定分支拉取到本地当前分支上
 git pull origin <远程分支名> :<本地分支名> //将远程指定分支 拉取到 本地指定分支上
+git pull = git fetch + git merge
 git fetch //从远程获取最新版本到本地 不会自动merge
 git commit -m'tag 日志' 
 git tag <tagname> // 打tag
@@ -41,6 +42,7 @@ git stash clear //清空stash列表
 git rebase <branch> //合并多个commit为一个完整的commit
 git rebase --continue //rebase过程中修复冲突后执行此命令 修复完冲突只需要git add 直接运行此命令提交
 git rebase --abort //终止rebase操作 回到rebase前代码
+git cherry-pick feature //将feature分支的最近一次提交，转移到当前分支
 git status //仅记录commit日志
 git reflog //记录所有操作 运行分支及commit日志
 git branch
