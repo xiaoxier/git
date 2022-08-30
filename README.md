@@ -89,6 +89,7 @@ $ git push origin --tags //推送所有tag到远程 （tags[所有]）
 $ git push origin --delete <tagname>  //删除远程删标签
 $ git push origin :refs/tags/<tagname>//删除线上tag
 $ git pull origin --tags //更新到本地
+$ cat ~/.ssh/id_rsa.pub      # 查看本机 ssh 公钥，生成公钥
 
 ```
 
