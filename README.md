@@ -5,7 +5,7 @@
 git init
 git config --global user.name "xiaoxier" //设置全局name  --global去掉 仅设置当前项目下
 git config --global user.email "25@qq.com"//设置全局email 
-git clone -b <分支名> xx.git  //从指定分支clone
+git clone -b <分支名> xx.git  //从指定分支clone 当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin
 git add .
 git pull   //将与本地当前分支同名的远程分支 拉取并merge到本地当前分支上(需先关联远程分支)
 git pull origin <远程分支名> //将远程指定分支拉取到本地当前分支上
@@ -15,7 +15,6 @@ git fetch //从远程获取最新版本到本地 不会自动merge
 git commit //vim编辑正文 自动生成标题 esc退出编辑 :wq保存
 git commit -m'tag 日志' //不推荐使用 日志只包含标题
 
-git tag <tagname> // 打tag
 git push 
 git push --set-upstream origin <本地分支名> //将本地分支与远程同名分支相关联
 git push origin <指定的分支名>  //将本地代码推送到远程指定分支
