@@ -37,7 +37,7 @@ git reset --hard HEAD-n //回退到上n次提交
 git reset --hard commitId //回退到指定commId 回退前提交记录不可见 可以重返未来版本 reflog有记录
 git reset --hard origin/B //用B的代码完全替换当前分支的代码 需要提交到线上 就git push -f
 git revert -n commitId //去掉指定commitId提交 生成新版本附带新commitId信息 保留历史记录 同一文件撤退指定提交需手动删除提交内容
-git revert -n commitIdA..commitIdB //去掉A-B之间所有的commitId 按照提交先后 先A后B
+git revert -n commitIdA..commitIdB //去掉A-B之间所有的commitId 按照提交先后 先A后B 左开右闭 不含commitIdA
 git restore <文件名> //删除未存入暂存区的本地内容 扔掉
 git stash //暂存  删除未存入暂存区的本地内容 并且存入缓存
 git stash save "message" //添加存储备注
@@ -46,7 +46,7 @@ git stash pop //应用最近一次暂存的修改，并删除暂存的记录
 git stash apply stash@{1} //应用暂存列表的进度key
 git stash list //查看存储
 git stash clear //清空stash列表
-git rebase <branch> 合并多个commit为一个完整的commit 把本地未push的分支提交历史整理成直线  查看历史提交变化更容易 分叉的代码需要多对比
+git rebase <branch> 1.合并多个commit为一个完整的commit 2.把本地未push的分支提交历史整理成直线  查看历史提交变化更容易 分叉的代码需要多对比
 git rebase --continue //rebase过程中修复冲突后执行此命令 修复完冲突只需要git add 直接运行此命令提交
 git rebase --abort //终止rebase操作 回到rebase前代码
 git cherry-pick feature //将feature分支的最近一次提交，复制到当前分支
