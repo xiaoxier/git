@@ -1,6 +1,7 @@
 # git
 
 **「常用命令」**
+edit content
 ```
 git init
 git config --global user.name "xiaoxier" //设置全局name  --global去掉 仅设置当前项目下
