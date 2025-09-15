@@ -142,6 +142,7 @@ lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s
 **github ssh**
 ```
 ls -la ~/.ssh //检查是否已有 SSH 密钥
+pbcopy < ~/.ssh/id_xxx.pub //有的话，选择一条id，运行自动复制到剪切板
 ssh-keygen -t ed25519 -C "你的邮箱地址" //生成新的 SSH 密钥（如果没有）
 
 eval "$(ssh-agent -s)"  
