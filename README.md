@@ -12,6 +12,11 @@ git pull   //将与本地当前分支同名的远程分支 拉取并merge到本�
 git pull origin <远程分支名> //将远程指定分支拉取到本地当前分支上
 git pull origin <远程分支名> :<本地分支名> //将远程指定分支 拉取到 本地指定分支上
 git pull = git fetch + git merge
+
+//在一个本地分支查看不同远程分支代码时，保证本地分支与要看的远程分支绝对一致
+git fetch origin xunwei_dev 
+git reset --hard origin/xunwei_dev 
+
 git fetch //从远程获取最新版本到本地 不会自动merge
 git commit //vim编辑正文 自动生成标题 esc退出编辑 :wq保存
 git commit -m'tag 日志' //不推荐使用 日志只包含标题
@@ -68,6 +73,7 @@ git diff HEAD^ HEAD //比较上次与上上次差异
 
 git log //查看commit历史
 git log --pretty=oneline //仅查看commit id
+git log --branches --not --remotes  //只查看本地还没提交到remote的commit历史
 git config --list 
 git remote -v //查看详细
 git remote //查看不详细
@@ -76,6 +82,7 @@ git remote rm [简称:origin]  解除远程分支与本地分支的绑定关系
 git remote rm origin //删除已关联名为origin的远程仓库
 git remote rename old_name new_name  //修改远程仓库简称
 git remote add origin https://git/panpan.han/my-git.git  //关联远程与本地分支 origin是对应后面地址的简称 本地库可以同时与多个远程库互相同步
+git remote set-url origin https://git/panpan.han/my-git.git //将当前origin远程地址替换为该远程
 git push origin <远程分支> 推送到远程仓库
 git fetch --prune origin //修剪本地远程分支缓存信息 
 git checkout <文件名> //更新文件
