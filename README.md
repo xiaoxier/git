@@ -139,6 +139,21 @@ lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s
 
 ```
 
+**github ssh**
+```
+ls -la ~/.ssh //检查是否已有 SSH 密钥
+ssh-keygen -t ed25519 -C "你的邮箱地址" //生成新的 SSH 密钥（如果没有）
+
+eval "$(ssh-agent -s)"  
+ssh-add ~/.ssh/id_ed25519 //添加 SSH 密钥到 SSH 代理
+
+将 SSH 公钥添加到 GitHub：
+复制公钥内容：pbcopy < ~/.ssh/id_ed25519.pub
+登录 GitHub，进入 Settings → SSH and GPG keys → New SSH key
+粘贴公钥并保存
+
+```
+
 # shell
 
 **「常用命令」**
