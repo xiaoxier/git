@@ -19,7 +19,8 @@ git reset --hard origin/xunwei_dev
 
 git fetch //从远程获取最新版本到本地 不会自动merge
 git commit //vim编辑正文 自动生成标题 esc退出编辑 :wq保存
-git commit -m'tag 日志' //不推荐使用 日志只包含标题
+git commit -m'message 日志' //不推荐使用 日志只包含标题
+git commit --amend --date "$(date -v+1d +"%Y-%m-%d %H:%M:%S")" --no-edit  //v+1d：加 1 天 / -v-1m：少 1 分钟 / -v+1w：加 1 周
 
 git push 
 git push --set-upstream origin <本地分支名> //将本地分支与远程同名分支相关联
@@ -42,14 +43,15 @@ git reset --hard HEAD^ //回退到上版本 （回退操作去掉暂存区记录
 git reset --hard HEAD-n //回退到上n次提交
 git reset --hard commitId //回退到指定commId 回退前提交记录不可见 可以重返未来版本 reflog有记录
 git reset --hard origin/B //用B的代码完全替换当前分支的代码 需要提交到线上 就git push -f
+git reset --soft HEAD^ //回退到上版本 （保留工作区的所有修改）
 git revert -n commitId //去掉指定commitId提交 生成新版本附带新commitId信息 保留历史记录 同一文件撤退指定提交需手动删除提交内容
 git revert -n commitIdA..commitIdB //去掉A-B之间所有的commitId 按照提交先后 先A后B 左开右闭 不含commitIdA
 git restore <文件名> //删除未存入暂存区的本地内容 扔掉
 git stash //暂存  删除未存入暂存区的本地内容 并且存入缓存
 git stash save "message" //添加存储备注
-git stash drop //删除暂存记录
+git stash drop //清空apply的暂存
 git stash pop //应用最近一次暂存的修改，并删除暂存的记录
-git stash apply stash@{1} //应用暂存列表的进度key
+git stash apply stash@{key} //应用暂存列表的进度key
 git stash list //查看存储
 git stash clear //清空stash列表
 git rebase <branch> 1.合并多个commit为一个完整的commit 2.把本地未push的分支提交历史整理成直线  查看历史提交变化更容易 分叉的代码需要多对比
@@ -73,7 +75,7 @@ git diff HEAD^ HEAD //比较上次与上上次差异
 
 git log //查看commit历史
 git log --pretty=oneline //仅查看commit id
-git log --branches --not --remotes  //只查看本地还没提交到remote的commit历史
+git log --branches --not --remotes  //git log commit历史 : --branches本地所有分支中 --not除了 --remotes提交到remote 
 git config --list 
 git remote -v //查看详细
 git remote //查看不详细
@@ -104,8 +106,10 @@ $ git tag v1.0 <commitId> //指定commitId打tag
 $ git tag -a <tagname> -m "blablabla..." //增加tagname 注释blablab
 $ git tag //查看所有标签
 $ git tag -l   ' v1.0.*' //查看某版本tag
+$ git tag --list --format='%(refname:short) → 提交时间: %(creatordate:short) | 标签类型: %(objecttype)' //查看所有标签详细信息
 $ git show v1.0 //查看tag信息
 $ git checkout [tagName/branchName] //切换到某tag
+git checkout -b <新分支名> <tag名称> //基于tag创建修复分支
 $ git tag -d <tagname>  //删除本地tag
 $ git push origin v1.0.0 //推送指定tagv1.0.0到远程
 $ git push origin --tags //推送所有tag到远程 （tags[所有]）
